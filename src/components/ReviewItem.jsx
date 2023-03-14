@@ -4,8 +4,8 @@ const ReviewItem = ({key, owner, image, category, comment_count, created, design
             <article>
             <img src={image} alt="image of game"/>
             <div className="review-list__item__details">
-            <h3>User: {owner}</h3>
-            <h4>{title}</h4>
+            <h3>{title}</h3>
+            <h4>User: {owner}</h4>
             <p>Created at: {created}</p>
             <p>Category: {category}</p>
             <p>Designer: {designer}</p>
