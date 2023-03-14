@@ -8,10 +8,18 @@ const fetchReviews = () => {
   return gamesApi 
   .get("/reviews")
   .then((data)=>{
-    return data;
+    return data.data;
   });
 };
 
-export { fetchReviews};
+const fetchReviewID = (review_id) =>{
+  return gamesApi
+  .get(`/reviews/${review_id}`)
+  .then((data)=>{
+    return data;
+  })
+}
+
+export { fetchReviews, fetchReviewID};
 
 

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchReviews } from "../utils/api";
 import ReviewBody from "./ReviewBody";
+import SingleReviewItem from "./SingleReviewItem";
+
+
 
 const ReviewsCard = () => {
 
@@ -16,7 +19,7 @@ const ReviewsCard = () => {
         ];
         Promise.all(promises)
             .then((data)=>{
-                const reviewsData = data[0].data.reviews;
+                const reviewsData = data[0].reviews;
                 setReviews(reviewsData)
                 setError(null)
             })
