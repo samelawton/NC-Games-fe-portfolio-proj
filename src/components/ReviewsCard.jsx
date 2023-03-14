@@ -7,7 +7,7 @@ const ReviewsCard = () => {
     const [reviews, setReviews] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true); 
-    console.log(reviews)
+    
     useEffect(()=>{
         setReviews([])
         setIsLoading(true);

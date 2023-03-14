@@ -1,7 +1,7 @@
 import ReviewItem from "./ReviewItem";
 
 const ReviewBody = ({reviews}) => {
-    console.log(reviews)
+    
     return (
         <section>
             <ol className="review-list">
