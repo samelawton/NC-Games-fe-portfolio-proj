@@ -1,14 +1,6 @@
-import { fetchReviewID } from "../utils/api";
+import { Link } from "react-router-dom";
 
 const ReviewItem = ({review_id, owner, image, category, comment_count, created, designer, title, votes, setSingleReview}) => {
-
-    const openReviewButton = (event) =>{
-        fetchReviewID(event.target.value)
-        .then((data)=>{
-            setSingleReview(data.data.review)
-        })
-    }
-    
     
     return ( 
         <li className="review-list__item">
@@ -22,7 +14,7 @@ const ReviewItem = ({review_id, owner, image, category, comment_count, created, 
             <p>Designer: {designer}</p>
             <p>Votes: {votes}</p>
             <p>Comment count: {comment_count}</p>
-            <button onClick={openReviewButton} value={review_id}>Open Review</button>
+            <Link to={`/reviews/${review_id}`}><button value={review_id}>Open Review</button></Link>
             </div>
             </article>
         </li>
