@@ -10,8 +10,7 @@ const ReviewsCard = () => {
     const [reviews, setReviews] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true); 
-    const [singleReview, setSingleReview] = useState(null)
-
+    
     useEffect(()=>{
         setReviews([])
         setIsLoading(true);
@@ -34,8 +33,7 @@ const ReviewsCard = () => {
 
     return (
         <main className="reviews-card">
-            {reviews && !singleReview && <ReviewBody reviews={reviews} setSingleReview={setSingleReview}/>}
-            {singleReview && <SingleReviewItem singleReview={singleReview}/>}
+            {reviews && <ReviewBody reviews={reviews}/>}
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
         </main>

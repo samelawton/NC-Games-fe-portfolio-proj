@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ReviewItem = ({review_id, owner, image, category, comment_count, created, designer, title, votes, setSingleReview}) => {
+const ReviewItem = ({review_id, owner, image, category, comment_count, created, designer, title, votes}) => {
     
     return ( 
         <li className="review-list__item">
