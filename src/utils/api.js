@@ -20,6 +20,14 @@ const fetchReviewID = (review_id) =>{
   })
 }
 
-export { fetchReviews, fetchReviewID};
+const fetchComments = (review_id) =>{
+  return gamesApi
+  .get(`/reviews/${review_id}/comments`)
+  .then((data)=>{
+    return data;
+  })
+}
+
+export { fetchReviews, fetchReviewID, fetchComments};
 
 
