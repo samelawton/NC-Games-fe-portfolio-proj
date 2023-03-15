@@ -5,29 +5,37 @@ const gamesApi = axios.create({
 });
 
 const fetchReviews = () => {
-  return gamesApi 
-  .get("/reviews")
-  .then((data)=>{
+  return gamesApi.get("/reviews").then((data) => {
     return data.data;
   });
 };
 
-const fetchReviewID = (review_id) =>{
-  return gamesApi
-  .get(`/reviews/${review_id}`)
-  .then((data)=>{
+const fetchReviewID = (review_id) => {
+  return gamesApi.get(`/reviews/${review_id}`).then((data) => {
     return data;
-  })
-}
+  });
+};
 
-const fetchComments = (review_id) =>{
-  return gamesApi
-  .get(`/reviews/${review_id}/comments`)
-  .then((data)=>{
+const fetchComments = (review_id) => {
+  return gamesApi.get(`/reviews/${review_id}/comments`).then((data) => {
     return data;
-  })
-}
+  });
+};
 
-export { fetchReviews, fetchReviewID, fetchComments};
+const upVote = (review_id) => {
+  return gamesApi
+    .patch(`/reviews/${review_id}`, { inc_votes: 1 })
+    .then(({ data }) => {
+      return data;
+    });
+};
 
+const downVote = (review_id) => {
+  return gamesApi
+    .patch(`/reviews/${review_id}`, { inc_votes: -1 })
+    .then(({ data }) => {
+      return data;
+    });
+};
 
+export { fetchReviews, fetchReviewID, fetchComments, upVote, downVote };
