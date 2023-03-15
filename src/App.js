@@ -5,6 +5,7 @@ import Header from './components/Header';
 import UserPage from './Pages/UserPage';
 import { Route, Routes } from 'react-router-dom';
 import SingleReviewItem from './components/SingleReviewItem';
+import CommentsItem from './components/CommentsItem';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/reviews" element={<ReviewsPage/>}/>
         <Route path="/reviews/:review_id" element={<SingleReviewItem/>}/>
+        <Route path="/reviews/:review_id/comments" element={<CommentsItem/>}/>
         <Route path="/users" element={<UserPage/>}/>
       </Routes>
 
