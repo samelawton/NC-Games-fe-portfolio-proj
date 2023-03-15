@@ -78,3 +78,20 @@ html {
   object-fit:fill;
   display: flex;
 }
+
+/* ------- single review card --------*/
+
+.upvote-button img{
+flex: auto;
+height: 1rem;
+}
+
+.downvote-button img{
+  flex: auto;
+  height: 1rem;
+  }
+
+.vote-error{
+  font-style: italic;
+  font-size: medium;
+}
