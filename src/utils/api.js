@@ -4,10 +4,12 @@ const gamesApi = axios.create({
   baseURL: "https://sam-l-back-end-hosting.onrender.com/api",
 });
 
-const fetchReviews = () => {
-  return gamesApi.get("/reviews").then((data) => {
-    return data.data;
-  });
+const fetchReviews = (category) => {
+  return gamesApi
+    .get(`/reviews`, { params: { category: category } })
+    .then((data) => {
+      return data.data;
+    });
 };
 
 const fetchReviewID = (review_id) => {
@@ -19,7 +21,6 @@ const fetchReviewID = (review_id) => {
 const fetchComments = (review_id) => {
   return gamesApi.get(`/reviews/${review_id}/comments`).then((data) => {
     return data;
-   
   });
 };
 
@@ -40,14 +41,22 @@ const downVote = (review_id) => {
 };
 
 const postComment = (review_id, commentBody) => {
- 
   return gamesApi
-  .post(`/reviews/${review_id}/comments`, {username: "tickle122", body: commentBody.comment})
-  .then((data)=>{
-    console.log(data)
-    return data;
-  });
-}
- 
+    .post(`/reviews/${review_id}/comments`, {
+      username: "tickle122",
+      body: commentBody.comment,
+    })
+    .then((data) => {
+      console.log(data);
+      return data;
+    });
+};
 
-export { fetchReviews, fetchReviewID, fetchComments, upVote, downVote, postComment };
+export {
+  fetchReviews,
+  fetchReviewID,
+  fetchComments,
+  upVote,
+  downVote,
+  postComment,
+};

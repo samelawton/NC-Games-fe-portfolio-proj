@@ -54,7 +54,6 @@ const SingleReviewItem = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(postCommentBody)
     setPendingComment(true);
     postComment(review_id, postCommentBody)
     .then(()=>{
