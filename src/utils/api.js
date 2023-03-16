@@ -42,7 +42,7 @@ const downVote = (review_id) => {
 const postComment = (review_id, commentBody) => {
  
   return gamesApi
-  .post(`/reviews/${review_id}/comments`, {username: commentBody.username, body: commentBody.comment})
+  .post(`/reviews/${review_id}/comments`, {username: "tickle122", body: commentBody.comment})
   .then((data)=>{
     console.log(data)
     return data;

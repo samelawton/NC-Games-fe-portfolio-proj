@@ -141,14 +141,6 @@ const SingleReviewItem = () => {
 
       <form className="post-comment" onSubmit={submitHandler}>
         <input
-          className="username-post-comment-box"
-          id="username"
-          value={postCommentBody.username}
-          type="text"
-          onChange={changeHandle}
-          placeholder="Username..."
-        ></input>
-        <input
           className="post-comment-box"
           id="comment"
           value={postCommentBody.comment}
