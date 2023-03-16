@@ -19,6 +19,7 @@ const fetchReviewID = (review_id) => {
 const fetchComments = (review_id) => {
   return gamesApi.get(`/reviews/${review_id}/comments`).then((data) => {
     return data;
+   
   });
 };
 
@@ -38,4 +39,15 @@ const downVote = (review_id) => {
     });
 };
 
-export { fetchReviews, fetchReviewID, fetchComments, upVote, downVote };
+const postComment = (review_id, commentBody) => {
+ 
+  return gamesApi
+  .post(`/reviews/${review_id}/comments`, {username: "tickle122", body: commentBody.comment})
+  .then((data)=>{
+    console.log(data)
+    return data;
+  });
+}
+ 
+
+export { fetchReviews, fetchReviewID, fetchComments, upVote, downVote, postComment };

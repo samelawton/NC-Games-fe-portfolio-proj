@@ -3,7 +3,7 @@ const CommentBody = ({author, body, created, votes, id}) => {
         <li key={id} className="comment-list__item">
         <article>
         <div className="comment-list__item__details">
-        <h4>Author: {author}</h4>
+        <h4>User: {author}</h4>
         <p>{body}</p>
         <p>Created at: {created}</p>
         <p>Votes: {votes}</p>

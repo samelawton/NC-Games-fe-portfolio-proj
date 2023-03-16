@@ -1,6 +1,7 @@
 import CommentBody from "./CommentBody";
 
 const CommentsItem = ({comments}) => {
+
     return (
         <section>
         <ol key={comments.comment_id} className="comment-list">
